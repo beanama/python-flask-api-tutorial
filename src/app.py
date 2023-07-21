@@ -17,9 +17,10 @@ def add_new_todo():
     todos.append(request_body)
     return jsonify(todos)
 
-
-
-
+@app.route('/todos/<int:position>', methods=['DELETE'])
+def delete_todo(position):
+    todos.pop(position)
+    return jsonify(todos)
 
 
 @app.route('/blabla', methods=['GET'])
